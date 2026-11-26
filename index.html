@@ -245,8 +245,6 @@
           data-i18n="nav_freq">#frequency</a>
         <a href="#chart" class="hover:text-ink dark:hover:text-ink-dark transition-colors"
           data-i18n="nav_chart">#visuals</a>
-        <a href="#console" class="hover:text-ink dark:hover:text-ink-dark transition-colors"
-          data-i18n="nav_console">#console</a>
       </nav>
 
       <!-- Action Group -->
@@ -901,79 +899,6 @@
         </div>
       </section>
 
-      <!-- SECTION 5: LIVE C++ CONSOLE MIRROR, FORMULAS & ARCHITECTURE (Portfolio 3-Panel Widget) -->
-      <section id="console"
-        class="max-w-6xl mx-auto px-4 sm:px-6 py-10 border-t border-borderLight dark:border-borderDark">
-        <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
-          <div class="flex items-center gap-3">
-            <span class="font-mono text-emerald-600 dark:text-emerald-400 font-bold text-sm">## /</span>
-            <h2 class="text-lg sm:text-xl font-bold tracking-tight" data-i18n="sec_console_title">C++ console mirror &
-              inspector</h2>
-          </div>
-          <button type="button" onclick="copyConsoleOutput()"
-            class="px-3 py-1.5 rounded-lg border border-borderLight dark:border-borderDark bg-card dark:bg-card-dark hover:border-emerald-500/50 font-mono text-xs transition-colors"
-            data-i18n="btn_copy_console">
-            Copy Console Output
-          </button>
-        </div>
-
-        <div
-          class="rounded-2xl border border-borderLight dark:border-borderDark bg-card dark:bg-card-dark overflow-hidden shadow-sm">
-          <!-- Top Switcher Bar -->
-          <div
-            class="flex flex-wrap items-center justify-between gap-2 px-4 py-3 bg-paper/70 dark:bg-paper-dark/60 border-b border-borderLight dark:border-borderDark">
-            <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs">
-              <button type="button" onclick="switchInspectorTab('output')" id="insp-btn-output"
-                class="px-3 py-1.5 rounded-lg bg-card dark:bg-card-dark font-semibold text-emerald-600 dark:text-emerald-400 border border-borderLight dark:border-borderDark shadow-xs"
-                data-i18n="tab_console">Live Console Output</button>
-              <button type="button" onclick="switchInspectorTab('formulas')" id="insp-btn-formulas"
-                class="px-3 py-1.5 rounded-lg text-muted dark:text-muted-dark hover:text-ink dark:hover:text-ink-dark transition-colors"
-                data-i18n="tab_formulas">Step-by-Step Formulas</button>
-              <button type="button" onclick="switchInspectorTab('arch')" id="insp-btn-arch"
-                class="px-3 py-1.5 rounded-lg text-muted dark:text-muted-dark hover:text-ink dark:hover:text-ink-dark transition-colors"
-                data-i18n="tab_arch">.h / .cpp Architecture</button>
-            </div>
-            <span class="font-mono text-[10px] text-muted dark:text-muted-dark uppercase tracking-wider">
-              Descriptive-Statistics-Calculator
-            </span>
-          </div>
-
-          <!-- Panel Body -->
-          <div class="p-5 bg-paper dark:bg-paper-dark font-mono text-xs leading-relaxed overflow-x-auto">
-            <!-- View 1: Live Console Output -->
-            <pre id="insp-view-output"
-              class="text-emerald-700 dark:text-emerald-400 whitespace-pre overflow-x-auto tabular-nums"></pre>
-
-            <!-- View 2: Step-by-Step Math Formulas -->
-            <div id="insp-view-formulas" class="hidden space-y-4 text-slate-700 dark:text-slate-300"></div>
-
-            <!-- View 3: Architecture Tree -->
-            <div id="insp-view-arch" class="hidden text-slate-700 dark:text-slate-300 space-y-1.5">
-              <div class="text-emerald-600 dark:text-emerald-400 font-bold">Descriptive-Statistics-Calculator/</div>
-              <div>├── <span class="text-ink dark:text-ink-dark font-semibold">main.cpp</span> <span
-                  class="text-muted dark:text-muted-dark">// Interactive console loop: (1) Datos individuales, (2)
-                  Cálculo de intervalos, (3) Salir</span></div>
-              <div>├── <span class="text-ink dark:text-ink-dark font-semibold">comun.h</span> <span
-                  class="text-muted dark:text-muted-dark">// Shared structs: MedidasDeTendencia, MedidasDeDispersion,
-                  DatosAgrupados</span></div>
-              <div>├── <span class="text-ink dark:text-ink-dark font-semibold">comun.cpp</span> <span
-                  class="text-muted dark:text-muted-dark">// Input validation (totalDatos, ingresarDatos),
-                  pedirDecimales, calcularRango, interpretacionCV</span></div>
-              <div>├── <span class="text-ink dark:text-ink-dark font-semibold">funciones.h / funciones.cpp</span> <span
-                  class="text-muted dark:text-muted-dark">// Mode 1: Ungrouped individual data statistics, frequency
-                  table & bar chart</span></div>
-              <div>├── <span class="text-ink dark:text-ink-dark font-semibold">intervalos.h / intervalos.cpp</span>
-                <span class="text-muted dark:text-muted-dark">// Mode 2: Sturges' rule, class intervals, class marks,
-                  grouped mean/median/mode, variance & ASCII histogram</span>
-              </div>
-              <div>└── <span class="text-emerald-600 dark:text-emerald-400 font-semibold">index.html</span> <span
-                  class="text-muted dark:text-muted-dark">// Full reactive web interface using the exact portfolio
-                  editorial color-set</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
   </main>
 
@@ -1007,7 +932,6 @@
         nav_summary: '#metrics',
         nav_freq: '#frequency',
         nav_chart: '#visuals',
-        nav_console: '#console',
         hero_badge: 'Interactive Web Interface · Faithful C++ Engine Port',
         hero_title_1: 'Descriptive Statistics',
         hero_title_2: 'Calculator',
@@ -1063,11 +987,6 @@
         chart_bars: 'Histogram / Bars',
         chart_ogive: 'Cumulative Ogive',
         chart_hover_hint: 'Hover over a bar or point to inspect values',
-        sec_console_title: 'C++ console mirror & inspector',
-        btn_copy_console: 'Copy Console Output',
-        tab_console: 'Live Console Output',
-        tab_formulas: 'Step-by-Step Formulas',
-        tab_arch: '.h / .cpp Architecture',
         cv_very: 'Very representative (< 10% — low variability)',
         cv_ok: 'Acceptable representation (< 20% — moderate variability)',
         cv_low: 'Weak mean representation (< 30% — high variability)',
@@ -1092,7 +1011,6 @@
         nav_summary: '#medidas',
         nav_freq: '#frecuencias',
         nav_chart: '#gráficos',
-        nav_console: '#consola',
         hero_badge: 'Interfaz Web Interactiva · Motor Modular C++',
         hero_title_1: 'Calculadora de Estadística',
         hero_title_2: 'Descriptiva',
@@ -1148,11 +1066,6 @@
         chart_bars: 'Histograma / Barras',
         chart_ogive: 'Ojiva Acumulada',
         chart_hover_hint: 'Pasa el cursor sobre una barra o punto para ver el detalle',
-        sec_console_title: 'espejo de consola C++ e inspector',
-        btn_copy_console: 'Copiar Consola',
-        tab_console: 'Salida de Consola',
-        tab_formulas: 'Fórmulas Paso a Paso',
-        tab_arch: 'Arquitectura .h / .cpp',
         cv_very: 'Muy representativo (menor al 10% - baja variabilidad)',
         cv_ok: 'Representativo aceptable (menor al 20% - variabilidad moderada)',
         cv_low: 'Media poco representativa (menor al 30% - alta variabilidad)',
@@ -1185,7 +1098,6 @@
       customK: 4,
       strictCpp: false,
       chartType: 'bars', // 'bars' | 'ogive'
-      inspectorTab: 'output', // 'output' | 'formulas' | 'arch'
       rawText: '12, 15, 15, 18, 20, 22, 22, 22, 25, 30, 31, 35, 40, 42, 45',
       pendingSingleValue: '',
       lastResult: null
@@ -1615,7 +1527,7 @@
       renderSummaryCards(res);
       renderFrequencyTable(res);
       renderChart(res);
-      renderInspector(res);
+      syncInspectorToParent(res);
     }
 
     function renderDataChips(sorted, pendingNum = null) {
@@ -2006,7 +1918,7 @@
       });
     }
 
-    function renderInspector(res) {
+    function buildInspectorPayload(res) {
       // 1. Live C++ Console Output (mirrors intervalos.cpp::mostrarResultadosIntervalos & individual output)
       const cvPInfo = interpretCV(res.cvP, false);
       const cvMInfo = interpretCV(res.cvM, res.n < 2);
@@ -2080,14 +1992,13 @@
         lines.push(`CV muestral: ${res.cvM === null ? 'N/A' : fmt(res.cvM) + '%'} : ${cvMInfo.textEs}`);
         lines.push('-----------------------------------------------------------------------------------');
       }
-      document.getElementById('insp-view-output').textContent = lines.join('\n');
 
       // 2. Step-by-Step Formulas
-      const formulasEl = document.getElementById('insp-view-formulas');
+      let formulasHtml = '';
       if (res.mode === 'intervals') {
         const mr = res.rows[res.medianRowIdx];
         const modr = res.rows[res.modalIdx];
-        formulasEl.innerHTML = `
+        formulasHtml = `
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div class="p-3.5 rounded-xl bg-card dark:bg-card-dark border border-borderLight dark:border-borderDark">
               <div class="text-emerald-600 dark:text-emerald-400 font-bold mb-1">1. Sturges' Rule & Amplitude</div>
@@ -2118,7 +2029,7 @@
             </div>
           </div>`;
       } else {
-        formulasEl.innerHTML = `
+        formulasHtml = `
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div class="p-3.5 rounded-xl bg-card dark:bg-card-dark border border-borderLight dark:border-borderDark">
               <div class="text-emerald-600 dark:text-emerald-400 font-bold mb-1">1. Arithmetic Mean (x̄)</div>
@@ -2137,6 +2048,21 @@
             </div>
           </div>`;
       }
+
+      return {
+        consoleOutput: lines.join('\n'),
+        formulasHtml,
+        mode: res.mode,
+        n: res.n
+      };
+    }
+
+    function syncInspectorToParent(res) {
+      if (!res || window.parent === window) return;
+      try {
+        const payload = buildInspectorPayload(res);
+        window.parent.postMessage({ type: 'calc-inspector-sync', ...payload }, '*');
+      } catch (e) { /* ignore cross-origin/file restrictions */ }
     }
 
     /* ========================================================
@@ -2163,21 +2089,6 @@
       b1.className = type === 'bars' ? active : idle;
       b2.className = type === 'ogive' ? active : idle;
       if (state.lastResult) renderChart(state.lastResult);
-    }
-
-    function switchInspectorTab(tab) {
-      state.inspectorTab = tab;
-      ['output', 'formulas', 'arch'].forEach(key => {
-        const view = document.getElementById(`insp-view-${key}`);
-        const btn = document.getElementById(`insp-btn-${key}`);
-        if (key === tab) {
-          view.classList.remove('hidden');
-          btn.className = 'px-3 py-1.5 rounded-lg bg-card dark:bg-card-dark font-semibold text-emerald-600 dark:text-emerald-400 border border-borderLight dark:border-borderDark shadow-xs';
-        } else {
-          view.classList.add('hidden');
-          btn.className = 'px-3 py-1.5 rounded-lg text-muted dark:text-muted-dark hover:text-ink dark:hover:text-ink-dark transition-colors';
-        }
-      });
     }
 
     function loadPreset(key) {
@@ -2262,11 +2173,6 @@
       document.execCommand('copy');
       document.body.removeChild(el);
       showToast(msg);
-    }
-
-    function copyConsoleOutput() {
-      const txt = document.getElementById('insp-view-output').textContent;
-      copyText(txt, state.lang === 'es' ? 'Salida de consola copiada' : 'Console output copied!');
     }
 
     function buildTableRowsText(sep) {
@@ -2387,6 +2293,8 @@
     window.addEventListener('message', (event) => {
       if (event.data && event.data.type === 'portfolio-theme-sync') {
         applyTheme(event.data.theme, false);
+      } else if (event.data && event.data.type === 'calc-inspector-request') {
+        if (state.lastResult) syncInspectorToParent(state.lastResult);
       }
     });
 
